@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Models\Course;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PageController::class, 'index'])->name('home');
@@ -26,4 +28,14 @@ Route::get('/course/edit', function () {
 
 Route::get('/course/create', function () {
     return view('course.create');
+});
+
+Route::post('/course/store', function (Request $request) {
+    // return $request;
+    Course::create([
+        "title" => $request->name,
+        "price" => $request->price,
+        "description" => $request->description,
+    ]);
+    return redirect("/course/index");
 });

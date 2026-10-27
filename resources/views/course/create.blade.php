@@ -18,7 +18,7 @@
                 Create a New Course
             </h2>
 
-            <form action="" method="POST" class="space-y-6">
+            <form action="/course/store" method="POST" class="space-y-6">
 
                 @csrf
 
@@ -54,22 +54,14 @@
                 </div>
 
                 <!-- Buttons -->
-                <div class="flex items-center justify-end gap-4 pt-4">
-
-                    <a href="/course/index" class="px-5 py-3 text-gray-600 hover:text-gray-900 font-medium">
-                        Cancel
-                    </a>
-
-                    <button type="submit"
-                        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-200">
-                        Create Course
-                    </button>
-
-                </div>
+                
+                <button type="submit"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-200">
+                    Create Course
+                </button>
 
             </form>
         </div>
 
     </section>
 </x-layout>
-
